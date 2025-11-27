@@ -1,0 +1,21 @@
+---
+const today = new Date();
+---
+
+<footer class="border-t border-border/40 py-12 px-4 bg-muted/10">
+  <div class="container mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
+    <div class="flex items-center gap-2">
+      <img src="/justred-logo.svg" alt="JustRed Logo" class="w-6 h-6" />
+      <span class="font-heading font-bold text-lg">JustRed</span>
+    </div>
+    
+    <div class="flex items-center gap-8 text-sm text-muted-foreground">
+      <a href="https://github.com/justred-tech/justred/" target="_blank" class="hover:text-foreground transition-colors">GitHub</a>
+      <a href="#" class="hover:text-foreground transition-colors">Privacy Policy</a>
+    </div>
+    
+    <p class="text-sm text-muted-foreground">
+      &copy; {today.getFullYear()} JustRed. Open Source.
+    </p>
+  </div>
+</footer>

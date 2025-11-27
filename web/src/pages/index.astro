@@ -1,0 +1,168 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+import IconChrome from '../components/icons/IconChrome.astro';
+import IconPrivacy from '../components/icons/IconPrivacy.astro';
+import IconCloud from '../components/icons/IconCloud.astro';
+import IconMonitor from '../components/icons/IconMonitor.astro';
+import IconGithub from '../components/icons/IconGithub.astro';
+import IconDatabase from '../components/icons/IconDatabase.astro';
+import IconStar from '../components/icons/IconStar.astro';
+import IconArrowRight from '../components/icons/IconArrowRight.astro';
+
+const features = [
+  {
+    title: "Chrome Extension",
+    description: "Seamlessly integrates with your browser. Adds a subtle indicator to your Gmail interface.",
+    Icon: IconChrome
+  },
+  {
+    title: "Privacy First",
+    description: "You don't have to give access to your Gmail permissions to anyone. You are the owner of your data.",
+    Icon: IconPrivacy
+  },
+  {
+    title: "Firebase Powered",
+    description: "Built on top of robust Firebase infrastructure for reliable and secure deployment.",
+    Icon: IconCloud
+  },
+  {
+    title: "Real-time Tracking",
+    description: "Know exactly when your emails are opened with real-time notifications.",
+    Icon: IconMonitor
+  },
+  {
+    title: "Open Source",
+    description: "Fully transparent code. Audit the security yourself and contribute to the community.",
+    Icon: IconGithub
+  },
+  {
+    title: "Data Ownership",
+    description: "Your data stays with you. No third-party servers reading your emails.",
+    Icon: IconDatabase
+  }
+];
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "JustRed",
+  "applicationCategory": "BrowserExtension",
+  "operatingSystem": "Chrome",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "description": "Open Source Email Tracking for Gmail. Privacy-first Chrome Extension.",
+  "softwareVersion": "1.0",
+  "featureList": "Email Tracking, Privacy First, Firebase Powered, Open Source"
+};
+---
+
+<script type="application/ld+json" set:html={JSON.stringify(schema)} />
+
+<Layout title="JustRed - Open Source Email Tracking">
+  <Navbar />
+
+  <main>
+    <!-- Hero Section -->
+    <section class="pt-32 pb-20 px-4">
+      <div class="container mx-auto max-w-5xl text-center">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-primary/20 bg-primary/10 text-primary text-sm font-medium mb-8">
+          <span>Open Source Alternative</span>
+          <IconArrowRight width="16" height="16" />
+        </div>
+        
+        <h1 class="text-5xl md:text-7xl font-heading font-bold tracking-tight mb-6 bg-clip-text text-transparent bg-gradient-to-b from-white to-white/60">
+          Open Source <br class="hidden md:block" />
+          Email Tracking for <span class="text-primary">Gmail</span>
+        </h1>
+        
+        <p class="text-xl text-muted-foreground max-w-2xl mx-auto mb-10 leading-relaxed">
+          JustRed is a privacy-first Chrome Extension that lets you track emails without sharing your data. 
+          Powered by Firebase. You own your data.
+        </p>
+        
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+          <a href="https://github.com/justred-tech/justred/" target="_blank" class="w-full sm:w-auto px-8 py-4 bg-primary hover:bg-primary/90 text-primary-foreground rounded-lg font-medium text-lg transition-all flex items-center justify-center gap-2">
+            <IconChrome />
+            Add to Chrome
+          </a>
+          <a href="https://github.com/justred-tech/justred/" target="_blank" class="w-full sm:w-auto px-8 py-4 bg-muted hover:bg-muted/80 text-foreground rounded-lg font-medium text-lg transition-all border border-border flex items-center justify-center gap-2">
+            <IconGithub />
+            View on GitHub
+          </a>
+        </div>
+
+        <!-- Dashboard Preview -->
+        <div class="mt-20 relative rounded-xl border border-border bg-muted/30 p-2 shadow-2xl">
+          <div class="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent z-10"></div>
+          <!-- Placeholder for extension screenshot, using a generic code/dashboard image for now or the previous one -->
+          <div class="w-full h-[400px] bg-muted/20 rounded-lg flex items-center justify-center text-muted-foreground">
+            <div class="text-center">
+                <IconChrome class="w-24 h-24 mx-auto mb-4 opacity-20" />
+                <p>Extension Preview</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Trusted By / Tech Stack -->
+    <section class="py-10 border-y border-border/40 bg-muted/20">
+      <div class="container mx-auto px-4 text-center">
+        <p class="text-sm text-muted-foreground font-medium mb-8">POWERED BY MODERN TECH</p>
+        <div class="flex flex-wrap justify-center items-center gap-12 opacity-70 grayscale hover:grayscale-0 transition-all duration-500">
+           <span class="text-xl font-bold flex items-center gap-2"><IconChrome /> Chrome</span>
+           <span class="text-xl font-bold flex items-center gap-2"><IconCloud /> Firebase</span>
+           <span class="text-xl font-bold flex items-center gap-2"><IconGithub /> Open Source</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Features Grid -->
+    <section id="features" class="py-32 px-4">
+      <div class="container mx-auto max-w-6xl">
+        <div class="text-center mb-20">
+          <h2 class="text-3xl md:text-5xl font-heading font-bold mb-6">Why JustRed?</h2>
+          <p class="text-lg text-muted-foreground max-w-2xl mx-auto">
+            Most email trackers sell your data or read your emails. JustRed is different.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {features.map(feature => (
+            <div class="p-6 rounded-2xl border border-border bg-muted/20 hover:bg-muted/40 transition-colors group">
+              <div class="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center text-primary mb-4 group-hover:scale-110 transition-transform">
+                <feature.Icon />
+              </div>
+              <h3 class="text-xl font-bold mb-2">{feature.title}</h3>
+              <p class="text-muted-foreground leading-relaxed">{feature.description}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-32 px-4">
+      <div class="container mx-auto max-w-4xl text-center">
+        <div class="p-12 rounded-3xl bg-gradient-to-b from-muted/50 to-background border border-border relative overflow-hidden">
+          <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full bg-primary/5 blur-3xl -z-10"></div>
+          <h2 class="text-4xl md:text-5xl font-heading font-bold mb-6">Take back control</h2>
+          <p class="text-lg text-muted-foreground mb-10 max-w-2xl mx-auto">
+            Start tracking your emails without compromising your privacy.
+          </p>
+          <a href="https://github.com/justred-tech/justred/" target="_blank" class="inline-flex px-8 py-4 bg-primary hover:bg-primary/90 text-primary-foreground rounded-lg font-medium text-lg transition-all items-center gap-2">
+            Get JustRed Now
+            <IconArrowRight />
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</Layout>

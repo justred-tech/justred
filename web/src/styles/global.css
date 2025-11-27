@@ -1,0 +1,32 @@
+@import "tailwindcss";
+
+@theme {
+    --font-sans: "Inter", sans-serif;
+    --font-heading: "Lexend", sans-serif;
+
+    --color-background: #000000;
+    --color-foreground: #fafafa;
+    --color-primary: #FF4444;
+    --color-primary-foreground: #ffffff;
+    --color-muted: #1a1a1a;
+    --color-muted-foreground: #a1a1aa;
+    --color-border: #27272a;
+}
+
+@layer base {
+    html {
+        font-family: var(--font-sans);
+        background-color: var(--color-background);
+        color: var(--color-foreground);
+        scroll-behavior: smooth;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        font-family: var(--font-heading);
+    }
+}

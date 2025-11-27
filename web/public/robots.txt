@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://justred.io/sitemap-index.xml
